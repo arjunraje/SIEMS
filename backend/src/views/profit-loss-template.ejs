@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profit & Loss Report</title>
+    <style>
+      body { font-family: Arial; margin: 2rem; }
+      h2 { text-align: center; }
+      table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+      th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    </style>
+  </head>
+  <body>
+    <h2>Profit & Loss Report</h2>
+    <p><strong>Month:</strong> <%= month || 'All' %></p>
+    <p><strong>Client:</strong> <%= clientName || 'All' %></p>
+    <p><strong>Category:</strong> <%= category || 'All' %></p>
+
+    <table>
+      <tr><th>Total Income</th><td>₹<%= totalIncome %></td></tr>
+      <tr><th>Total Expense</th><td>₹<%= totalExpense %></td></tr>
+      <tr><th>Net Profit</th><td>₹<%= netProfit %></td></tr>
+    </table>
+  </body>
+</html>

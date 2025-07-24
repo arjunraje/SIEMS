@@ -1,0 +1,47 @@
+# --- Global Ignore ---
+*.log
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*.local
+.vscode/
+*.pem
+*.key
+*.crt
+*.pid
+*.pid.lock
+.eslintcache
+.cache/
+.npm/
+.pnp.*
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# --- Backend (Node.js + TS) ---
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/coverage/
+backend/*.tsbuildinfo
+backend/.env
+backend/.env.*.local
+backend/pids/
+backend/logs/
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+
+# --- Frontend (React + TS) ---
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/coverage/
+frontend/.env
+frontend/.env.*.local
+frontend/*.tsbuildinfo
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
