@@ -40,7 +40,7 @@ export class AuthService{
         const isMatch= await bcrypt.compare(password,user.password);
         if(!isMatch) throw new Error("Invalid credentials");
 
-        const accessToken=jwt.sign({id:user.id,role:user.role},process.env.JWT_SECRET!,{expiresIn:'1d'});
+        const accessToken=jwt.sign({id:user.id,role:user.role},process.env.JWT_SECRET!,{expiresIn:'15m'});
         const refreshToken=jwt.sign({id:user.id,role:user.role},process.env.REFRESH_SECRET!,{expiresIn:'7d'});
 
         return {user,accessToken,refreshToken};

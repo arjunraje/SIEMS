@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer';
 import { Invoice } from '../entities/Invoice';
 import { generateInvoicePDFBuffer } from './generateInvoicePDFBuffer';
+import fs from 'fs';
+import path from 'path';
 
 export const sendReminderEmail=async (invoice:Invoice,recipientEmail:string)=>{
     const transporter=nodemailer.createTransport({
@@ -26,15 +28,16 @@ export const sendReminderEmail=async (invoice:Invoice,recipientEmail:string)=>{
         ],
     });
 };
-// src/utils/sendMail.ts
+
 
 
 export const sendMail = async (
   to: string,
   subject: string,
-  text: string
+  text: string,
+  
 ) => {
-  // Replace with your actual SMTP service credentials
+
   const transporter = nodemailer.createTransport({
         service:'Gmail',
         auth:{
@@ -44,10 +47,11 @@ export const sendMail = async (
     });
 
   await transporter.sendMail({
-    from: `"SIEMS" <${process.env.EMAIL_USER}>`, // sender
+    from: `"SIEMS" <${process.env.EMAIL_USER}>`, 
     to,
     subject,
     text,
+    
   });
 };
 
